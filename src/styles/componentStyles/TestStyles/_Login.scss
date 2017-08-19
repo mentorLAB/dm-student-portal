@@ -1,0 +1,23 @@
+.Login {
+    display: grid;
+    grid-template-columns: 1fr 140px 140px 140px;
+    grid-template-rows: 100%;
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+}
+
+.space {
+    display: inline-block;
+    border: thin solid #333;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.Login_login {
+    grid-column: 1 / span 1;
+}
+.Login_classroom {
+    grid-column: 2 / span 1;
+}
+

@@ -1,2 +1,13 @@
 @import 'reset';
+@import 'globals';
 @import 'variables';
+
+@import './componentStyles/App';
+@import './componentStyles/TestStyles/CodeWars';
+@import './componentStyles/TestStyles/Home';
+@import './componentStyles/TestStyles/LMS';
+@import './componentStyles/TestStyles/Login';
+@import './componentStyles/TestStyles/Nav';
+@import './componentStyles/TestStyles/Provo';
+@import './componentStyles/TestStyles/Q';
+@import './componentStyles/TestStyles/Resources';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import spaces from '../../styles/styleObjects/spaces';
 import DMlogo from '../../imgs/DM-logo.png';
+// import spaces from '../../styles/styleObjects/spaces';
 // import border from '../../imgs/border.png';
 
 class Home extends Component {
@@ -19,7 +19,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        document.getElementById('username').addEventListener('focus', () => this.spinLogo(11))
+        document.getElementById('username').addEventListener('focus', () => this.spinLogo(0))
         document.getElementById('password').addEventListener('focus', () => this.spinLogo(-241))
     }
 
@@ -43,36 +43,46 @@ class Home extends Component {
     }
 
     render() {
-        const  { spaceBar } = spaces;
+        // const  { spaceBar } = spaces;
 
         return (
             <div className="Home">
                 <section className="space Home_login">
-                    <h1 style={spaceBar.collapsed}>Log In</h1>
+                    <h1>Log In</h1>
                     <form className="loginForm" onSubmit={() => alert('why')} >
                         <div className="lock">
                             <div className="lockShank"></div>
                             <div id="lockBody">
-                                <div><img id="DMlogo" alt="DM logo" src={ DMlogo } /></div>
+                                <div>
+                                    <img id="DMlogo" alt="DM logo" src={ DMlogo } />
+                                </div>
                             </div>
                         </div>
                         
-                        <input type="text" ref="username" id="username" placeholder="username" onChange={() => this.spinLogo(11)}/>
-                        <input type="password" ref="password" id="password" placeholder="password" onChange={() => this.spinLogo(21)}/> 
-                        <h3 onClick={(e) => this.handleSubmit(e)}>Log In</h3>
+                        <input  type="text" 
+                                ref="username" 
+                                id="username" 
+                                placeholder="username" 
+                                onChange={() => this.spinLogo(23)}/>
+                        <input  type="password" 
+                                ref="password" 
+                                id="password" 
+                                placeholder="password" 
+                                onChange={() => this.spinLogo(34)}/> 
+                        <h3 className="loginButton" onClick={(e) => this.handleSubmit(e)}>Log In</h3>
                     </form>
                 </section>
 
                 <section className="space Home_classroom">
-                    <h1 style={spaceBar.collapsed}>Classroom</h1>
+                    <h1>Classroom</h1>
                 </section>
 
                 <section className="space Home_extra_resources">
-                    <h1 style={spaceBar.collapsed}>Extra Resources</h1>
+                    <h1>Extra Resources</h1>
                 </section>
 
                 <section className="space Home_Provo">
-                    <h1 style={spaceBar.collapsed}>Provo</h1>
+                    <h1>Provo</h1>
                 </section> 
             </div>
         )

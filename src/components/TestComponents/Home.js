@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import DMlogo from '../../imgs/DM-logo.png';
-// import spaces from '../../styles/styleObjects/spaces';
-// import border from '../../imgs/border.png';
+import { Route, Link } from 'react-router-dom';
+
+import Login from './Login';
+import Classroom from './Classroom';
+import ExtraResources from './ExtraResources';
+import Provo from './Provo';
 
 class Home extends Component {
 
@@ -9,81 +12,54 @@ class Home extends Component {
         super()
 
         this.state = {
-            username: ''
-            ,password: ''
-            ,deg: 555
+            route: ''
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.spinLogo = this.spinLogo.bind(this);
+        this.setRoute = this.setRoute.bind(this);
     }
 
-    componentDidMount() {
-        document.getElementById('username').addEventListener('focus', () => this.spinLogo(0))
-        document.getElementById('password').addEventListener('focus', () => this.spinLogo(-241))
-    }
-
-    spinLogo(deg) {
-        // e.preventDefault();
-        this.state.deg += deg;
-        const logo = document.getElementById('DMlogo');
-        logo.style.transform = `rotate(${this.state.deg}deg)`;
-        this.setState({ deg: this.state.deg})
-
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        const logo = document.getElementById('lockBody');
-        logo.classList.toggle('unlock');
-        // setTimeout(() => {logo.classList.toggle('unlock');}, 400);
-
-        console.log('Username:', this.refs.username);
-        console.log('Password:', this.refs.password);
+    setRoute(route) {
+        this.setState({route})
     }
 
     render() {
-        // const  { spaceBar } = spaces;
+        const gridStyles = {
+            login: { gridTemplateColumns: "1fr 122px 122px 122px" }
+            ,classroom: { gridTemplateColumns: "122px 1fr 122px 122px" }
+            ,extra_resources: { gridTemplateColumns: "122px 122px 1fr 122px" }
+            ,provo: { gridTemplateColumns: "122px 122px 122px 1fr" }
+        }
 
         return (
-            <div className="Home">
-                <section className="space Home_login">
-                    <h1>Log In</h1>
-                    <form className="loginForm" onSubmit={() => alert('why')} >
-                        <div className="lock">
-                            <div className="lockShank"></div>
-                            <div id="lockBody">
-                                <div>
-                                    <img id="DMlogo" alt="DM logo" src={ DMlogo } />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <input  type="text" 
-                                ref="username" 
-                                id="username" 
-                                placeholder="username" 
-                                onChange={() => this.spinLogo(23)}/>
-                        <input  type="password" 
-                                ref="password" 
-                                id="password" 
-                                placeholder="password" 
-                                onChange={() => this.spinLogo(34)}/> 
-                        <h3 className="loginButton" onClick={(e) => this.handleSubmit(e)}>Log In</h3>
-                    </form>
-                </section>
+            <div className="Home" style={ gridStyles[this.state.route] }>
+                
+                
+                <Link to="/">
+                    <section className="space Home_login" >
+                        <h1>{ this.state.route !== 'login' && 'Log Out'}</h1>
+                        <Route exact path="/" render={ props => <Login {...props} setRoute={this.setRoute}/> } />
+                    </section>
+                </Link>
 
-                <section className="space Home_classroom">
-                    <h1>Classroom</h1>
-                </section>
+                <Link to="/classroom">
+                    <section className="space Home_classroom" >
+                        <h1>{ this.state.route !== 'classroom' && 'Classroom'}</h1>
+                        <Route path="/classroom" render={ props => <Classroom {...props} setRoute={this.setRoute}/> } /> 
+                    </section>
+                </Link>
 
-                <section className="space Home_extra_resources">
-                    <h1>Extra Resources</h1>
-                </section>
+                <Link to="/extra_resources">
+                    <section className="space Home_extra_resources" >
+                        <h1>{ this.state.route !== 'extra_resources' && 'Extra Resources'}</h1>
+                        <Route path="/extra_resources" render={ props => <ExtraResources {...props} setRoute={this.setRoute} /> } /> 
+                    </section>
+                </Link>
 
-                <section className="space Home_Provo">
-                    <h1>Provo</h1>
-                </section> 
+                <Link to="/provo">
+                    <section className="space Home_provo" >
+                        <h1>{ this.state.route !== 'provo' && 'Provo'}</h1>
+                        <Route path="/provo" render={ (props) => <Provo {...props} setRoute={this.setRoute}/> } />
+                    </section> 
+                </Link>
             </div>
         )
     }

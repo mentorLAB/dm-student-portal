@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-class Provo extends Component {
+class Classroom extends Component {
 
     componentDidMount() {
-        this.props.setRoute('provo');
+        this.props.setRoute('classroom');
     }
 
     render() {
         return (
-            <div className="Provo">
+            <div className="Classroom">
             </div>
         )
     }
 }
 
-export default Provo;
+export default Classroom;

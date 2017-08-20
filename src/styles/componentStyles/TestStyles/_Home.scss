@@ -1,0 +1,57 @@
+.Home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    height: 100vh;
+    width: 100vw;
+    background-color: $gray;
+    transition: .5s;
+    .space {
+        h1 {
+            font: {
+                size: 3rem;
+                weight: 300;
+            }
+            width: 500px;
+            margin: 20px 0 0 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: rotate(90deg);
+            transform-origin: 30px 30px;
+        }
+        // display: inline-block;
+        position: relative;
+        height: 100%;
+        border: none;
+        cursor: pointer;
+        color: $white;
+        font: {
+            family: 'Montserrat', monospace;
+            size: 2.1rem;
+        }
+        transition: all .7s;
+        box-shadow: 0 0 0 7px RGBA(245, 245, 245, 0);
+        // &:hover {
+        //     background-color: $white;
+        // }
+        
+        &.Home_classroom {
+            grid-column: 2 / span 1;
+            background-color: $darkbrick;
+        }
+        &.Home_extra_resources {
+            grid-column: 3 / span 1;
+            background-color: $brick;
+        }
+        &.Home_provo {
+            grid-column: 4 / span 1;
+            background-color: $DMblue;
+        }
+        &.Home_classroom:hover, &.Home_extra_resources:hover, &.Home_provo:hover {
+            background-color: $white;
+            box-shadow: 0 10px 20px 7px RGBA(30, 30, 30, 1);
+            color: $gray;
+        }
+    }
+}

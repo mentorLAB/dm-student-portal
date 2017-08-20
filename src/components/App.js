@@ -1,11 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
+import Home from './TestComponents/Home';
+import '../styles/main.css';
 
 export default class App extends Component {
-	render(){
+	render() {
 		return (
-			<div className='App'>
-				<p>Testing!</p>
-			</div>
+			<Router>
+				<div className="App">
+					<Home />
+				</div>
+			</Router>
 		)
 	}
 }

@@ -12,7 +12,7 @@ class Home extends Component {
         super()
 
         this.state = {
-            route: ''
+            route: ''   
         }
         this.setRoute = this.setRoute.bind(this);
     }
@@ -22,11 +22,12 @@ class Home extends Component {
     }
 
     render() {
+        const col = '123px';
         const gridStyles = {
-            login: { gridTemplateColumns: "1fr 122px 122px 122px" }
-            ,classroom: { gridTemplateColumns: "122px 1fr 122px 122px" }
-            ,extra_resources: { gridTemplateColumns: "122px 122px 1fr 122px" }
-            ,provo: { gridTemplateColumns: "122px 122px 122px 1fr" }
+            login:              { gridTemplateColumns: `1fr ${col} ${col} ${col}` }
+            ,classroom:         { gridTemplateColumns: `${col} 1fr ${col} ${col}` }
+            ,extra_resources:   { gridTemplateColumns: `${col} ${col} 1fr ${col}` }
+            ,provo:             { gridTemplateColumns: `${col} ${col} ${col} 1fr` }
         }
 
         return (

@@ -25,3 +25,5 @@ src/**/*.css
 
 # sensitive server files
 server/keys.js
+
+*.tmp$$

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import spaces from '../../styles/styleObjects/spaces';
 import DMlogo from '../../imgs/DM-logo.png';
-import bgImage from '../../imgs/login-bg.png';
+import bgImage from '../../imgs/doodles-01.png';
 
 
 class Login extends Component {
@@ -48,9 +48,9 @@ class Login extends Component {
         const  { spaceBar } = spaces;
         const bgStyles = {
             backgroundImage: `url(${bgImage})`
-            ,backgroundRepeat: 'no-repeat'
-            ,backgroundSize: 'cover'
-            ,backgroundPosition: 'center'
+            ,backgroundRepeat: 'repeat'
+            // ,backgroundSize: 'contain'
+            // ,backgroundPosition: 'center'
         }
 
         return (

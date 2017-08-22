@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ExtraResources extends Component {
 
     componentDidMount() {
-        this.props.setRoute('extra_resources');
+        // this.props.setRoute('extra_resources');
     }
 
     render() {

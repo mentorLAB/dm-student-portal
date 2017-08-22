@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import spaces from '../../styles/styleObjects/spaces';
 import DMlogo from '../../imgs/DM-logo.png';
 import bgImage from '../../imgs/doodles-01.png';
+import { withRouter } from 'react-router';
 
 
 class Login extends Component {
@@ -22,7 +23,9 @@ class Login extends Component {
     componentDidMount() {
         document.getElementById('username').addEventListener('focus', () => this.spinLogo(555))
         document.getElementById('password').addEventListener('focus', () => this.spinLogo(-441))
-        this.props.setRoute('login');
+        // this.props.setRoute('login');
+        // console.log('route', this.props.location)
+        
     }
 
     spinLogo(deg) {
@@ -52,9 +55,11 @@ class Login extends Component {
             // ,backgroundSize: 'contain'
             // ,backgroundPosition: 'center'
         }
+        const { location } = this.props;
 
         return (
             <div className="Login" style={ bgStyles }>
+                <div>{this.props.location.pathname}</div>
                 <form className="loginForm">
                     <div className="lock">
                         <div className="lockShank"></div>
@@ -83,3 +88,4 @@ class Login extends Component {
 }
 
 export default Login;
+// export default withRouter(Login);

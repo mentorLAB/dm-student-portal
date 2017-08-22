@@ -9,6 +9,7 @@ class Classroom extends Component {
     render() {
         return (
             <div className="Classroom">
+                here is stuff
             </div>
         )
     }

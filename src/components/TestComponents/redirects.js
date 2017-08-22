@@ -12,3 +12,18 @@ export default (
         </Switch>
     </div>
 )
+
+
+
+// const newProps = Object.assign( {}, this.props );
+// console.log(newProps);
+// delete newProps.location;
+
+// const { location, ...rest } = this.props
+
+// passPropsThroughRoute(props) {
+//     const { location, computedMatch, ...rest } = props;
+//     return (
+//         <Login {...rest} setRoute={this.setRoute}/>
+//     )
+// }

@@ -10,7 +10,6 @@ export default class App extends Component {
 			<Router>
 				<div className="App">
 					<Home />
-					{/* {routes} */}
 				</div>
 			</Router>
 		)

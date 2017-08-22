@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Provo extends Component {
 
     componentDidMount() {
-        this.props.setRoute('provo');
+        // this.props.setRoute('provo');
     }
 
     render() {

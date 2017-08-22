@@ -18,6 +18,12 @@ class Home extends Component {
         this.setRoute = this.setRoute.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.setState({
+    //         propsToPass: this.props
+    //     })
+    // }
+
     setRoute(route) {
         this.setState({route})
     }
@@ -30,6 +36,8 @@ class Home extends Component {
             ,extra_resources:   { gridTemplateColumns: `${col} ${col} 1fr ${col}` }
             ,provo:             { gridTemplateColumns: `${col} ${col} ${col} 1fr` }
         }
+
+        // const { location, computedMatch, ...rest } = this.props;
 
         return (
             <div className="Home" style={ gridStyles[this.state.route] }>

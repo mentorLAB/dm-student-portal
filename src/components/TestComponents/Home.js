@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+// import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 
-import Login from './Login';
-import Classroom from './Classroom';
-import ExtraResources from './ExtraResources';
-import Provo from './Provo';
-import redirects from './redirects';
+
+import routes from './routes';
 
 class Home extends Component {
 
@@ -13,7 +11,7 @@ class Home extends Component {
         super()
 
         this.state = {
-            route: ''   
+            route: 'login'   
         }
         this.setRoute = this.setRoute.bind(this);
     }
@@ -29,6 +27,7 @@ class Home extends Component {
     }
 
     render() {
+        const { route } = this.state;
         const col = '123px';
         const gridStyles = {
             login:              { gridTemplateColumns: `1fr ${col} ${col} ${col}` }
@@ -42,43 +41,31 @@ class Home extends Component {
         return (
             <div className="Home" style={ gridStyles[this.state.route] }>
                 
-                <Link to="/login">
+                <Link onClick={ () => { this.setState({route: 'login'}); } } to="/login">
                     <section className="space Home_login" >
-                        <h1>{ this.state.route !== 'login' && 'Log Out'}</h1>
-                        <Switch>
-                            <Route path="/login" render={ props => <Login {...props} setRoute={this.setRoute}/> } />
-                            { redirects }
-                        </Switch>
+                        <h1>{ route !== 'login' && 'Log Out'}</h1>
+                        { route === 'login' && routes }
                     </section>
                 </Link>
 
-                <Link to="/classroom">
+                <Link onClick={ () => { this.setState({route: 'classroom'}); } } to="/classroom">
                     <section className="space Home_classroom" >
-                        <h1>{ this.state.route !== 'classroom' && 'Classroom'}</h1>
-                        <Switch> 
-                            <Route path="/classroom" render={ props => <Classroom {...props} setRoute={this.setRoute}/> } /> 
-                            { redirects }
-                        </Switch>
+                        <h1>{ route !== 'classroom' && 'Classroom'}</h1>
+                        { route === 'classroom' && routes }
                     </section>
                 </Link>
 
-                <Link to="/extra_resources">
+                <Link onClick={ () => { this.setState({route: 'extra_resources'}); } } to="/extra_resources">
                     <section className="space Home_extra_resources" >
-                        <h1>{ this.state.route !== 'extra_resources' && 'Extra Resources'}</h1>
-                        <Switch> 
-                            <Route path="/extra_resources" render={ props => <ExtraResources {...props} setRoute={this.setRoute} /> } /> 
-                            { redirects }
-                        </Switch>
+                        <h1>{ route !== 'extra_resources' && 'Extra Resources'}</h1>
+                        { route === 'extra_resources' && routes }
                     </section>
                 </Link>
 
-                <Link to="/provo">
+                <Link onClick={ () => { this.setState({route: 'provo'}); } } to="/provo">
                     <section className="space Home_provo" >
-                        <h1>{ this.state.route !== 'provo' && 'Provo'}</h1>
-                        <Switch>
-                            <Route path="/provo" render={ (props) => <Provo {...props} setRoute={this.setRoute}/> } />
-                            { redirects }
-                        </Switch>
+                        <h1>{ route !== 'provo' && 'Provo'}</h1>
+                        { route === 'provo' && routes }
                     </section> 
                 </Link>
 

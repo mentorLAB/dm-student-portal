@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
-import Home from './TestComponents/Home';
+import Home from './Home';
 import '../styles/main.css';
-// import routes from '../routes';
 
 export default class App extends Component {
 	render() {
@@ -10,7 +9,6 @@ export default class App extends Component {
 			<Router>
 				<div className="App">
 					<Home />
-					{/* {routes} */}
 				</div>
 			</Router>
 		)

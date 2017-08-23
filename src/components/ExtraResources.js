@@ -9,6 +9,7 @@ class ExtraResources extends Component {
     render() {
         return (
             <div className="ExtraResources">
+                here are extra resources
             </div>
         )
     }

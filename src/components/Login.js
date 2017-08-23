@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import spaces from '../../styles/styleObjects/spaces';
-import DMlogo from '../../imgs/DM-logo.png';
-import bgImage from '../../imgs/doodles-01.png';
+import DMlogo from '../imgs/DM-logo.png';
+import bgImage from '../imgs/doodles-01.png';
 
 
 class Login extends Component {
@@ -26,11 +25,10 @@ class Login extends Component {
     }
 
     spinLogo(deg) {
-        // e.preventDefault();
-        this.state.deg += deg;
+        deg += this.state.deg;
         const logo = document.getElementById('DMlogo');
-        logo.style.transform = `rotate(${this.state.deg}deg)`;
-        this.setState({ deg: this.state.deg})
+        logo.style.transform = `rotate(${deg}deg)`;
+        this.setState({ deg: deg})
 
     }
 
@@ -38,14 +36,9 @@ class Login extends Component {
         e.preventDefault();
         const logo = document.getElementById('lockBody');
         logo.classList.toggle('unlock');
-        // setTimeout(() => {logo.classList.toggle('unlock');}, 400);
-
-        console.log('Username:', this.refs.username);
-        console.log('Password:', this.refs.password);
     }
 
     render() {
-        const  { spaceBar } = spaces;
         const bgStyles = {
             backgroundImage: `url(${bgImage})`
             ,backgroundRepeat: 'repeat'

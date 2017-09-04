@@ -75,7 +75,7 @@ class App extends Component {
                     </Switch>
                 </section>
 
-                <section className="space App_provo" >
+                <section className="space App_provo">
                     <Link to="/provo">
                         <div className="linkBar" style={ Object.assign({}, route === 'provo' && displayNone) }>
                             <h1>{ route !== 'provo' && 'Provo'}</h1>

@@ -11,20 +11,16 @@ User can access the q.
 Student can post a question to the q.
 Mentor can offer help on a question in the q.
 
-Student can see all untaken surveys.
-Student can take surveys.
-Admin can post surveys.
+Student can see all untaken surveys. (Surveys)
+Student can take surveys. (Surveys)
+Admin can post surveys. (Surveys)
 
-User can view a StackOverflow-esque forum.
-User can post question on StackOverflow-esque forum.
-User can comment on posts on StackOverflow-esque forum.
+User can view a StackOverflow-esque forum. (Übergrippen)
+User can post question on StackOverflow-esque forum. (Übergrippen)
+User can comment on posts on StackOverflow-esque forum. (Übergrippen)
 
 User can view skills++ and environment++ resource pages.
 User can add resources into the skills++ and environment++ resource pages.
 Admin/Mentor can remove resources into the resource pages.
 
-
-workshops on calendar
-access pre-course (LMS)
-notes tool
-job prep
+User can view and use all job-prep resources currently listed in Google Sheets. (Summit)
